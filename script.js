@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- Theme Management ---
 function initTheme() {
     const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) {
+        console.error('Theme toggle button not found in DOM');
+        return;
+    }
+
     const currentTheme = localStorage.getItem('theme') || 'dark';
     
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -224,7 +229,7 @@ function initServices() {
         { title: 'Deep Learning Applications', icon: '🕸️', desc: 'Advanced neural networks for high-dimensional data processing and pattern recognition.' },
         { title: 'LLM Development', icon: '📚', desc: 'Fine-tuning and deploying Large Language Models for specialized domain knowledge.' },
         { title: 'RAG Systems', icon: '📑', desc: 'Retrieval-Augmented Generation pipelines for accurate, context-aware AI responses.' },
-        { title: 'AI Chatbots', icon: '💬', desc idea: 'Intelligent conversational agents that handle complex user intents with precision.' },
+        { title: 'AI Chatbots', icon: '💬', desc: 'Intelligent conversational agents that handle complex user intents with precision.' },
         { title: 'Agentic AI Systems', icon: '⚙️', desc: 'Autonomous AI agents capable of planning, tool use, and multi-step reasoning.' },
         { title: 'Computer Vision', icon: '👁️', desc: 'Object detection, segmentation, and image analysis for industrial applications.' },
         { title: 'OCR Systems', icon: '📄', desc: 'High-accuracy optical character recognition for automated document processing.' },
